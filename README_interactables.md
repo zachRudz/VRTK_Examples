@@ -23,7 +23,7 @@ The `interactor` is typically a child of a tracked alias (eg: TrackedAlias-\>Ali
 - Grab an `interactable` (eg: we grab a gun)
 - Ungrab an `interactable` (eg: we let go of a gun)
 
-![Interactable Events](/readme_images/interactables/interactorEvents)
+![Interactable Events](/readme_images/interactables/interactorEvents.PNG)
 
 Whenever one of these events happens, we can call one or more public function from some gameobject in our scene. This is done via the UnityEvent system. 
 
@@ -69,7 +69,9 @@ Secondly, we need to hook up the `interactor` to the rest of our gameobjects. Fi
 
 2. Next, we need to find the gameobject that represents the button you want to press to trigger the grab. Under your controller prefabs, there should be a handful of existing gameobjects that represent the different available buttons. 
 
-If you're not finding the button you want to use, or you want to create a new button (eg: keyboard input, or input for a different button keycode), then you can make one yourself! Ceate a gameobject for it, and add a `Unity Button Action` component to it. Set the Key Code field to whatever button you want to listen for. Note: Some buttons on VR controllers are analog, not digital. For example, the original Oculus Rift trigger buttons are this way. Because they return a float input (ie: how far is this button pressed) rather than a boolean input (ie: is this button pressed or not?), their workflow is a bit different. [Take a look at the VRTK How To guide on converting a Float Action to a Boolean Action](https://academy.vrtk.io/Documentation/HowToGuides/Actions/ConvertingAFloatActionToABooleanAction/). TL;DR: You need to use a `Float To Boolean` component, and hook that up to a Boolean Action, defining a threshold that determines how much the button has to be pressed to emit a True value.
+If you're not finding the button you want to use, or you want to create a new button (eg: keyboard input, or input for a different button keycode), then you can make one yourself! Ceate a gameobject for it, and add a `Unity Button Action` component to it. Set the Key Code field to whatever button you want to listen for. 
+
+Note: Some buttons on VR controllers are analog, not digital. For example, the original Oculus Rift trigger buttons are this way. Because they return a float input (ie: how far is this button pressed) rather than a boolean input (ie: is this button pressed or not?), their workflow is a bit different. [Take a look at the VRTK How To guide on converting a Float Action to a Boolean Action](https://academy.vrtk.io/Documentation/HowToGuides/Actions/ConvertingAFloatActionToABooleanAction/). TL;DR: You need to use a `Float To Boolean` component, and hook that up to a Boolean Action, defining a threshold that determines how much the button has to be pressed to emit a True value.
 
 3. Now that we have our components for button presses, we can hook them up! Take a look at the below diagram below for the final result. In our proxy action, we have an array field called `Sources`. Add one to the size, and you'll see a new element gets added. We'll be dragging a gameobject that has a BooleanAction component into this slot, more specifically, the gameobject that we found/made in step 2.
 
