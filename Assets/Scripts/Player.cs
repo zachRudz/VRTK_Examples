@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
         
     }
 
-    public void LogAction() {
+    public void MyCustomAction() {
         Debug.Log("Button pressed!");
     }
 }
