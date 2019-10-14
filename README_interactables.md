@@ -23,7 +23,7 @@ The `interactor` is typically a child of a tracked alias (eg: TrackedAlias-\>Ali
 - Grab an `interactable` (eg: we grab a gun)
 - Ungrab an `interactable` (eg: we let go of a gun)
 
-![Interactable Events](/assets/interactables/interactorEvents)
+![Interactable Events](/readme_images/interactables/interactorEvents)
 
 Whenever one of these events happens, we can call one or more public function from some gameobject in our scene. This is done via the UnityEvent system. 
 
@@ -41,7 +41,7 @@ The `interactable` is a gameobject that the player can, as you would guess, inte
 
 These all come in the form of prefab gameobjects in VRTK:
 
-![Types of Interactables](/assets/interactables/interactableTypes.png)
+![Types of Interactables](/readme_images/interactables/interactableTypes.PNG)
 
 We can also configure how the grab action should operate for this object. For example...
 
@@ -77,7 +77,7 @@ Next, we'll hook up the proxy action to our `interactor`. Drag the proxy action 
 
 Your `interactor` should look something like the diagram below when done. Repeat the same for the right hand when you're ready - the `interactables` in the next step act differently when we grab them with two hands.
 
-![Proxy Action Diagram](/assets/interactables/reverseproxydiagram.png)
+![Proxy Action Diagram](/readme_images/interactables/reverseproxydiagram.PNG)
 
 
 ### Configure the interactable
@@ -96,9 +96,9 @@ This is configured under your `interactable`.
 
 Go to `[your interactable]->InteractionLogic->Interactable.GrabLogic->Interactable.GrabReceiver`. You can set the Grab Type field to either "Hold Till Release", or "Toggle".
 
-![Hierarchy](assets/interactables/grabtype1.png)
+![Hierarchy](/readme_images/interactables/grabtype1.PNG)
 
-![Inspector](/assets/interactables/grabtype2.png)
+![Inspector](/readme_images/interactables/grabtype2.PNG)
 
 
 #### How can I configure where the object snaps to when it's grabbed?
@@ -107,9 +107,9 @@ This is configured under your `interactable`. The gameobject names will vary dep
 
 Go to `[your interactable]->InteractionLogic->Interactable.GrabLogic->Actions->[Primary|Secondary]Action->Interactable.GrabAction.[ActionType]`. Here, you can set the "Grab Offset" field":
 
-![Hierarchy](assets/interactables/followTracking1.png)
+![Hierarchy](readme_images/interactables/followTracking1.PNG)
 
-![Inspector](/assets/interactables/followTracking2.png)
+![Inspector](/readme_images/interactables/followTracking2.PNG)
 
 - None: Default. Snaps to the origin of the `interactable`.
 - Precision Point: The `interactable` will follow the point where the player grabs.
